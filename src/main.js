@@ -16,7 +16,8 @@ const interactionsHandler = require("../Modules/Interactionhandler.js");
 const registerCommands = require("../OneTimeRuns/RegisterSlashCommands.js");
 const setupCodeOfConduct = require("../OneTimeRuns/CodeofConductMessage.js");
 const welcome = require("../Modules/Welcome.js");
-const addbanwords = require("./commands/addbanWord.js");
+const addBanWords = require("./commands/addbanWord.js");
+const siteManagement = require("./commands/addallowedsite.js")
 
 const client = new Client({
   intents: [
@@ -40,34 +41,30 @@ client.once("ready", async () => {
   } catch (error) {
     console.error('Error setting up Code of Conduct:', error);
   }
-
-  // Initialize welcome system
   welcome(client);
 });
 
 // Handle interactions
 client.on("interactionCreate", async (interaction) => {
   try {
-    // Handle button clicks for Code of Conduct acceptance
-    if (interaction.isButton() && interaction.customId === 'accept_coc') {
-      await interaction.reply({
-        content: 'Thank you for accepting the Code of Conduct! Welcome to IT Meet 2024.',
-        ephemeral: true
-      });
-      return;
-    }
-
-    // Handle other interactions
+    // if (interaction.isButton() && interaction.customId === 'accept_coc') {
+    //   await interaction.reply({
+    //     content: 'Thank you for accepting the Code of Conduct! Welcome to IT Meet 2024.',
+    //     ephemeral: true
+    //   });
+    //   return;
+    // }
     await interactionsHandler(interaction);
   } catch (error) {
-    console.error(error);
+    console.error('Error in Interaction handeler',error);
   }
 });
 
-// Handle messages for banned words
+// Handle messages
 client.on('messageCreate', async (message) => {
   try {
-    await addbanwords.handleMessage(message);
+    await addBanWords.handleMessage(message);
+    await siteManagement.handleMessage(message);
   } catch (error) {
     console.error('Error in message handler:', error);
   }

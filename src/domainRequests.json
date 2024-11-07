@@ -1,0 +1,34 @@
+[
+  [
+    "github.com",
+    {
+      "requestedBy": "838341643874336818",
+      "requestedAt": "2024-11-07T05:51:42.820Z",
+      "username": "edgerodin"
+    }
+  ],
+  [
+    "abc.com",
+    {
+      "requestedBy": "838341643874336818",
+      "requestedAt": "2024-11-07T05:59:35.793Z",
+      "username": "edgerodin"
+    }
+  ],
+  [
+    "hello",
+    {
+      "requestedBy": "838341643874336818",
+      "requestedAt": "2024-11-07T06:29:05.629Z",
+      "username": "edgerodin"
+    }
+  ],
+  [
+    "hello,com",
+    {
+      "requestedBy": "838341643874336818",
+      "requestedAt": "2024-11-07T06:47:25.176Z",
+      "username": "edgerodin"
+    }
+  ]
+]

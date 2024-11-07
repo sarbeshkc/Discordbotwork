@@ -4,8 +4,8 @@ const { request } = require("undici");
 
 module.exports = (client) => {
   client.on("guildMemberAdd", async (member) => {
-    const WELCOME_CHANNEL_ID = "1300361392532099094";
-    const COC_CHANNEL_ID = "1300361500401074176";
+    const WELCOME_CHANNEL_ID = "1295304193048969217";
+    const COC_CHANNEL_ID = "1295298032446996511";
 
     try {
       const welcomeChannel = client.channels.cache.get(WELCOME_CHANNEL_ID);
@@ -20,7 +20,7 @@ module.exports = (client) => {
       const context = canvas.getContext("2d");
 
       // Background
-      const background = await Canvas.loadImage("https://cdn.discordapp.com/attachments/846304543280988202/1295302619023151124/pngtree-abstract-technology-background-technical-electric-image_443494.jpg?ex=671ff451&is=671ea2d1&hm=cdfacf3e8ba74e7546ce7bd7516ac1cb9ddb1bc55d1deca9999606e65e634c05&");
+      const background = await Canvas.loadImage("https://cdn.discordapp.com/attachments/846304543280988202/1295302619023151124/pngtree-abstract-technology-background-technical-electric-image_443494.jpg?ex=672d2351&is=672bd1d1&hm=5033f2d97afadb73493514fe376af9004aebeeb44b819d628f5568133629ce8a&");
       context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
       // Gradient overlay

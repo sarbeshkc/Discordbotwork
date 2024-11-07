@@ -18,6 +18,51 @@ const commands = [ {
   ],
 },
 
+{
+  name: 'setalloweddomain',
+  description: 'Add a domain to the allowed list (Moderator Only)',
+  options: [
+      {
+          name: "domain",
+          type: ApplicationCommandOptionType.String,
+          description: "The domain to allow (e.g., youtube.com)",
+          required: true,
+      },
+  ],
+},
+{
+  name: 'removealloweddomain',
+  description: 'Remove a domain from the allowed list (Moderator Only)',
+  options: [
+      {
+          name: "domain",
+          type: ApplicationCommandOptionType.String,
+          description: "The domain to remove from allowed list",
+          required: true,
+      },
+  ],
+},
+{
+  name: 'requestdomain',
+  description: 'Request a new domain to be added to the allowed list',
+  options: [
+      {
+          name: "domain",
+          type: ApplicationCommandOptionType.String,
+          description: "The domain you want to request permission for",
+          required: true,
+      },
+  ],
+},
+{
+  name: 'listalloweddomains',
+  description: 'Show all currently allowed domains',
+},
+{
+  name: 'listdomainrequests',
+  description: 'Show all pending domain requests (Moderator Only)',
+}
+
 //   {
 //     name: 'createrole',
 //     description: 'create a new role along with the needed channel(Admin Level Only)',
